@@ -1,9 +1,9 @@
-variable "network_test_cidr" {
+variable "network_lab_cidr" {
   description = "CIDR block for the network-test VPC"
   type        = string
 }
 
-variable "network_test_sdwan_cidr" {
+variable "network_lab_sdwan_cidr" {
   description = "CIDR block for the network-test-sd-wan VPC"
   type        = string
 }

@@ -8,7 +8,7 @@ module "vpc" {
   az_count = var.az_count
 
   # Passes the CIDR block for the "network-test" VPC (default "10.50.0.0/22")
-  network_test_cidr = var.network_test_cidr
+  network_lab_cidr = var.network_lab_cidr
   # Passes the CIDR block for the "sdwan-test" VPC (default "10.51.0.0/22").
-  network_test_sdwan_cidr = var.network_test_sdwan_cidr
+  network_lab_sdwan_cidr = var.network_lab_sdwan_cidr
  }

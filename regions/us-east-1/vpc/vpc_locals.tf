@@ -9,7 +9,7 @@ locals {
   # Generate route table names dynamically
   private_route_table_tags = {
     for az in local.azs :
-    az => { Name = "network-test-private-${az}" }
+    az => { Name = "network-lab-private-${az}" }
   }
   
   # Private and public subnet names (two per AZ for SD-WAN VPC)
@@ -17,9 +17,9 @@ locals {
   sdwan_public_subnet_names = flatten([for az in local.azs : ["sdwan-public1-${az}", "sdwan-public2-${az}"]])
   
   # Generate private route table tags as a list (two per AZ)
-  sdwan_private_route_table_tags = flatten([for az in local.azs : [{ Name = "sdwan-vpc-private-${az}-1" }, { Name = "sdwan-vpc-private-${az}-2" }]])
+  sdwan_private_route_table_tags = flatten([for az in local.azs : [{ Name = "sdwan-lab-private-${az}-1" }, { Name = "sdwan-lab-private-${az}-2" }]])
   
   sdwan_public_route_table_tags = {
-    Name = "sdwan-public"
+    Name = "sdwan-lab-public"
   }
 }

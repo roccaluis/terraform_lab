@@ -3,7 +3,7 @@ module "sdwan_subnets" {
   source  = "hashicorp/subnets/cidr"
   version = "1.0.0"
   
-  base_cidr_block = var.network_test_sdwan_cidr
+  base_cidr_block = var.network_lab_sdwan_cidr
   networks = flatten([
     for az in local.azs : [
       { name = "sdwan-private1-${az}", new_bits = 5 },
@@ -16,12 +16,12 @@ module "sdwan_subnets" {
 
 # Create the SD-WAN VPC
 resource "aws_vpc" "sdwan" {
-  cidr_block           = var.network_test_sdwan_cidr
+  cidr_block           = var.network_lab_sdwan_cidr
   enable_dns_hostnames = true
   enable_dns_support   = true
   
   tags = {
-    Name        = "sdwan-test"
+    Name        = "sdwan-lab"
     Terraform   = "true"
     Environment = var.environment
   }
@@ -121,7 +121,7 @@ resource "aws_default_route_table" "sdwan_default" {
   # No routes are added since subnets use custom route tables
   # Just set the tags to name it
   tags = {
-    Name        = "sdwan-test-default"
+    Name        = "sdwan-lab-default"
     Terraform   = "true"
     Environment = var.environment
   }

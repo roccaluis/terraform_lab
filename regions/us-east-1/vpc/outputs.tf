@@ -1,22 +1,22 @@
 # VPC outputs for use by other resources
 output "vpc_id" {
   description = "The ID of the main VPC"
-  value       = aws_vpc.network_test.id
+  value       = aws_vpc.network_lab.id
 }
 
 output "vpc_cidr_block" {
   description = "The CIDR block of the main VPC"
-  value       = aws_vpc.network_test.cidr_block
+  value       = aws_vpc.network_lab.cidr_block
 }
 
 output "private_subnets" {
   description = "List of IDs of private subnets"
-  value       = aws_subnet.network_test_private[*].id
+  value       = aws_subnet.network_lab_private[*].id
 }
 
 output "public_subnets" {
   description = "List of IDs of public subnets"
-  value       = aws_subnet.network_test_public[*].id
+  value       = aws_subnet.network_lab_public[*].id
 }
 
 output "public_subnet_names" {

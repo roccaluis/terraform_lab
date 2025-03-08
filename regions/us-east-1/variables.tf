@@ -25,14 +25,14 @@ variable "az_count" {
   default     = 2
 }
 
-variable "network_test_cidr" {
-  description = "CIDR block for the network-test VPC"
+variable "network_lab_cidr" {
+  description = "CIDR block for the network-lab VPC"
   type        = string
   default     = "10.50.0.0/22"
 }
 
-variable "network_test_sdwan_cidr" {
-  description = "CIDR block for the network-test-sd-wan VPC"
+variable "network_lab_sdwan_cidr" {
+  description = "CIDR block for the network-lab-sd-wan VPC"
   type        = string
   default     = "10.51.0.0/22"
 }
