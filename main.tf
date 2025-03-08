@@ -11,12 +11,12 @@ terraform {
 
 provider "aws" {
   region = var.aws_region
-  profile = "betfanatics-rocca_tf"
+  profile = "iamadmin-general"
   }
 
   variable "aws_region" {
   description = "The AWS region to operate in"
   type        = string
-  default     = "ap-northeast-1"
+  default     = "us-east-1"
 }
 
